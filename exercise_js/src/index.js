@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Todos from './Todos'
+import Component1 from './useContext/Component1';
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -19,6 +20,8 @@ const App = () => {
 
   // (alias) useCallback<() => void>(callback: () => void, deps: React.DependencyList): () => void
   // useCallback will return a memoized version of the callback that only changes if one of the inputs has changed.
+  // Use the useCallback Hook to prevent the Todos component from re-rendering needlessly (when click increment). It's only
+  // re-render when `todos` changes
   const addTodo = useCallback(() => {
     setTodos((t) => [...t, 'New Todo'])
   }, [todos])
@@ -48,7 +51,7 @@ const expensiveCalculation = (num) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Component1 />
   </React.StrictMode>
 );
 
