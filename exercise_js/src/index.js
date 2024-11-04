@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Todos from './Todos'
 import Component1 from './useContext/Component1';
+import ComponentA from './useRef/ComponentA';
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -51,7 +52,7 @@ const expensiveCalculation = (num) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Component1 />
+    <ComponentA />
   </React.StrictMode>
 );
 
